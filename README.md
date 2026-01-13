@@ -4,11 +4,7 @@
 
 🚧 **Important Notice**
 
-- The **core model implementation (`model/`) will be released after the paper is officially accepted**.
-- This repository currently serves as:
-  - A placeholder for reproducibility
-  - A reference implementation entry for the corresponding publication
-
+- The **core model implementation will be released after the paper is officially accepted**.
 ## 📊 Datasets
 
 The experiments in the paper are conducted on commonly used public traffic datasets, such as:
