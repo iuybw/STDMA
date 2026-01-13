@@ -83,35 +83,7 @@ class TemporalEmbedding(nn.Module):
 
 
 
-class Encoder(nn.Module):
-    def __init__(self, d_model, head, num_nodes, seq_length=1, dropout=0.1,lamda=0.1):
-        "Take in model size and number of heads."
-        super(Encoder, self).__init__()
-        assert d_model % head == 0
-        self.d_k = d_model // head  # We assume d_v always equals d_k
-        self.head = head
-        self.num_nodes = num_nodes
-        self.seq_length = seq_length
-        self.d_model = d_model
-        self.attention = MultiHeadDifferentialAttention(d_model, head, lamda, num_nodes)
-        self.LayerNorm = LayerNorm(
-            [d_model, num_nodes, seq_length], elementwise_affine=False
-        )
-        self.dropout1 = nn.Dropout(p=dropout)
-        self.glu = GLU(d_model)
-        self.dropout2 = nn.Dropout(p=dropout)
 
-    def forward(self, input, adj_list=None):
-        # 64 64 170 12
-        x, weight, bias = self.attention(input)
-        x = x + input
-        x = self.LayerNorm(x)
-        x = self.dropout1(x)
-        x = self.glu(x) + x
-        x = x * weight + bias + x
-        x = self.LayerNorm(x)
-        x = self.dropout2(x)
-        return x
 
 
 class DMT(nn.Module):
