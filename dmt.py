@@ -134,14 +134,6 @@ class DMT(nn.Module):
                 for _ in range(layer)
             ]
         )
-        self.fc_st = nn.ModuleList(
-            [
-                nn.Conv2d(
-                    self.network_channel, self.network_channel, kernel_size=(1, 1)
-                )
-                for _ in range(layer)
-            ]
-        )
 
         self.regression_layer = nn.Conv2d(
             self.network_channel, self.output_len, kernel_size=(1, 1)
@@ -159,9 +151,6 @@ class DMT(nn.Module):
 
         data_st = torch.cat([input_data] + [tem_emb], dim=1)
 
-        for SpatialBlock, fc_st in zip(self.SpatialBlock, self.fc_st):
-            data_st = SpatialBlock(data_st) + fc_st(data_st)
-        prediction = self.regression_layer(data_st)
 
         return prediction
     
