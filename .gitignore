@@ -1,0 +1,68 @@
+# Data folder
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+# lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Model checkpoints (if you want to exclude them)
+*.pth
+*.pkl
+*.h5
+*.ckpt
+*.png
+*.pdf
+*.ipynb
+*.npy
+*.tif
+model.py
+pems08.log
+test1.py
+test.py
+lib/utils.py
+lib/metrics.py
+figs/
+dmt1.py
+dmt2.py
+dmt3.py
+dmt4.py
+dmtxiao.py
+dmtcushi.py
+traincopy.py
+logs/
+log1/
