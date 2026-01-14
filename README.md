@@ -5,6 +5,7 @@
 🚧 **Important Notice**
 
 - The **core model implementation will be released after the paper is officially accepted**.
+- In the early stage, we named the model Differential Memory Transformer (DMT), so both the model files and class names were set to dmt.
 ## 📊 Datasets
 
 The experiments in the paper are conducted on commonly used public traffic datasets, such as:
